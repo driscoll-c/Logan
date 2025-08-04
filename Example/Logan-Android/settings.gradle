@@ -1,1 +1,35 @@
+pluginManagement {
+    repositories {
+        maven {
+            url 'https://maven.aliyun.com/repository/public/'
+        }
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+    buildscript {
+        repositories {
+            flatDir {
+                dirs 'lib'
+            }
+        }
+        dependencies {
+            classpath fileTree(dir: 'lib', include: '*.jar')
+        }
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        maven {
+            url 'https://maven.aliyun.com/repository/public/'
+        }
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.name = "Logan"
+
 include ':app', ':logan'

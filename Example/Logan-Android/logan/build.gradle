@@ -1,17 +1,16 @@
 apply plugin: 'com.android.library'
-apply from: rootProject.file("bintrayUpload.gradle")
+//apply from: rootProject.file("bintrayUpload.gradle")
 
 android {
 //    publishNonDefault true
-    namespace "com.dianping.logan"
-    compileSdk 34
-
-    //https://github.com/Meituan-Dianping/Logan/tree/master/Example/Logan-Android#prerequisites
-    ndkVersion "23.2.8568313"
+    namespace = "com.dianping.logan"
+    compileSdk 35
+//    buildToolsVersion "25.0.2"
+    ndkVersion "25.1.8937393"
 
     defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 34
+        minSdkVersion 24
+        targetSdkVersion 35
         versionCode 1
         versionName "1.0"
 
@@ -20,8 +19,10 @@ android {
         externalNativeBuild {
             cmake {
                 arguments '-DBUILD_TESTING=OFF'
+//                arguments '-DBUILD_TESTING=OFF', '-DANDROID_TOOLCHAIN=gcc'
                 cFlags "-std=c11"
-                abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
+//                abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
+                abiFilters 'armeabi-v7a', 'arm64-v8a'
             }
         }
     }

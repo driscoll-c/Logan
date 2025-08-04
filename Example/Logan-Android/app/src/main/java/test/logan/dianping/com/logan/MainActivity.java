@@ -43,6 +43,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
 
+import com.dianping.logan.app.R;
+
 public class MainActivity extends Activity {
 
     private static final String TAG = MainActivity.class.getName();
